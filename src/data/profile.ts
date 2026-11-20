@@ -46,15 +46,15 @@ export const experience: Role[] = [
     ],
   },
   {
-    org: 'HIIT PLC, Abuja',
+    org: 'HiiT PLC, Abuja',
     title: 'IT Intern',
     period: 'Jan 2024 — Jul 2024',
-    summary: 'Front-end work and operations support; named first runner-up for Most Outstanding Intern across all HIIT branches nationwide.',
+    summary: 'SIWES internship in front-end work and operations support. Named 1st Runner-Up, HiiT SIWES+ Most Outstanding Intern for June 2024.',
     points: [
       'Built responsive web interfaces with HTML, CSS and JavaScript.',
       'Served as Student Assistant to the CEO, Mr. Kayode Shobajo.',
       'Represented the interns to management and coordinated front-desk operations.',
-      'Received a Letter of Commendation from HIIT PLC.',
+      'Received a Letter of Commendation from the Managing Director/CEO, HiiT PLC (August 2024).',
     ],
   },
 ];
@@ -160,6 +160,7 @@ export const credentials = {
       'Android Application Management',
     ],
   },
-  awards: ['First Runner-Up, Most Outstanding Intern — all HIIT PLC branches nationwide', 'Letter of Commendation, HIIT PLC'],
+  awardLetter: '/docs/HiiT-Commendation-Letter-June-2024.pdf',
+  awards: ['1st Runner-Up, HiiT SIWES+ Most Outstanding Intern, June 2024', 'Letter of Commendation, HiiT PLC, August 2024'],
   volunteer: { role: 'IT / Media Volunteer', org: 'Dominion Chapel', detail: 'Media and technical operations, graphics and slides for services and events.' },
 };

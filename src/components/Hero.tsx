@@ -6,8 +6,8 @@ import SystemMap from './SystemMap';
 const ease = [0.16, 1, 0.3, 1] as const;
 
 const headline: { w: string; em?: boolean }[] = [
-  { w: 'I' }, { w: 'build' }, { w: 'the' }, { w: 'systems' }, { w: 'behind' },
-  { w: 'elections,', em: true }, { w: 'hospitals', em: true }, { w: 'and' }, { w: 'schools.', em: true },
+  { w: 'I' }, { w: 'design' }, { w: 'and' }, { w: 'build' }, { w: 'software' },
+  { w: 'people' }, { w: 'can' }, { w: 'rely', em: true }, { w: 'on.', em: true },
 ];
 
 export default function Hero() {
@@ -29,9 +29,9 @@ export default function Hero() {
       {/* ambient ground */}
       <div className="pointer-events-none absolute inset-0 -z-10 [mask-image:linear-gradient(to_bottom,#000_70%,transparent)]" aria-hidden="true">
         <div className="grid-lines absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_65%_45%,#000_20%,transparent_75%)]" />
-        <div className="absolute -right-[10%] top-[8%] size-[620px] rounded-full bg-forest/50 blur-[140px]" />
-        <div className="absolute -left-[12%] bottom-[-10%] size-[520px] rounded-full bg-forest-deep/70 blur-[120px]" />
-        <div className="absolute right-[24%] top-[30%] size-[220px] rounded-full bg-mint/10 blur-[90px]" />
+        <div className="absolute -right-[10%] top-[8%] size-[620px] rounded-full bg-tint/50 blur-[140px]" />
+        <div className="absolute -left-[12%] bottom-[-10%] size-[520px] rounded-full bg-tint-2/70 blur-[120px]" />
+        <div className="absolute right-[24%] top-[30%] size-[220px] rounded-full bg-accent/10 blur-[90px]" />
       </div>
 
       <div className="wrap grid flex-1 items-center gap-10 pb-10 lg:grid-cols-12 lg:gap-6">
@@ -48,12 +48,12 @@ export default function Hero() {
           </motion.p>
 
           <h1 id="hero-title" className="display text-[clamp(2.6rem,5.5vw,5.6rem)]">
-            <span className="sr-only">I build the systems behind elections, hospitals and schools.</span>
+            <span className="sr-only">I design and build software people can rely on.</span>
             <span aria-hidden="true">
               {headline.map(({ w, em }, i) => (
                 <span key={i} className="inline-block overflow-hidden pb-[0.12em] align-top">
                   <motion.span
-                    className={`inline-block ${em ? 'accent-serif pr-[0.06em] text-mint' : ''}`}
+                    className={`inline-block ${em ? 'accent-serif pr-[0.06em] text-accent' : ''}`}
                     style={em ? { fontSize: '1.08em', letterSpacing: '-0.02em' } : undefined}
                     initial={{ y: '110%' }}
                     animate={{ y: 0 }}
@@ -73,7 +73,7 @@ export default function Hero() {
             transition={{ duration: 0.9, ease, delay: 0.9 }}
             className="lede mt-8 max-w-[34rem]"
           >
-            Full-stack web applications in TypeScript, React, Node.js and PostgreSQL, and the websites organisations run on. Based in Nigeria.
+            Full-stack developer. I take products from the first idea to the server they run on, across web applications, websites and IT systems. Based in Nigeria.
           </motion.p>
 
           <motion.div
@@ -106,7 +106,7 @@ export default function Hero() {
           <span>B.Sc. Computer Science · 2:1</span>
           <span className="hidden sm:inline">Co-founder &amp; CEO, MamiPay</span>
           <span className="hidden md:inline">Healthcare IT · NYSC</span>
-          <a href="#work" className="link-draw inline-flex min-h-11 items-center text-sage">Scroll to work ↓</a>
+          <a href="#work" className="link-draw inline-flex min-h-11 items-center text-accent-2">Scroll to work ↓</a>
         </div>
       </motion.div>
     </section>

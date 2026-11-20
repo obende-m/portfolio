@@ -39,7 +39,7 @@ export function SectionHead({ index, label, title, lede, id }: { index: string; 
       <Reveal className="lg:col-span-7">
         <p className="eyebrow mb-6 flex items-center gap-3">
           <span className="text-dim">{index}</span>
-          <span className="h-px w-8 bg-sage/40" aria-hidden="true" />
+          <span className="h-px w-8 bg-accent-2/40" aria-hidden="true" />
           {label}
         </p>
         <h2 id={id} className="h2">{title}</h2>

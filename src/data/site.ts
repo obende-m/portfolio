@@ -7,7 +7,6 @@ export const site = {
   phone: '+234 915 762 1035',
   phoneHref: 'tel:+2349157621035',
   linkedin: 'https://linkedin.com/in/michael-obende',
-  github: 'https://github.com/obende-m',
   cv: '/cv/Obende-Michael-Onimisi-CV.pdf',
 };
 

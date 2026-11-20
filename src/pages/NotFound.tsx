@@ -8,7 +8,7 @@ export default function NotFound() {
     <main id="main" className="wrap flex min-h-[80vh] flex-col justify-center pt-32">
       <p className="eyebrow mb-6">404</p>
       <h1 className="display text-[clamp(3rem,9vw,8rem)]">
-        Nothing <span className="accent-serif text-mint">here.</span>
+        Nothing <span className="accent-serif text-accent">here.</span>
       </h1>
       <p className="lede mt-6 max-w-md">The page you followed doesn’t exist. The work is one click away.</p>
       <Link to="/#work" className="btn btn-primary mt-10 self-start">

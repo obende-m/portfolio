@@ -17,7 +17,7 @@ export default function Experience() {
           index="03"
           label="Experience"
           id="experience-title"
-          title={<>Where I’ve <span className="accent-serif text-mint">worked.</span></>}
+          title={<>Where I’ve <span className="accent-serif text-accent">worked.</span></>}
           lede="A company I co-founded, two hospitals during national service, and the internship where it started."
         />
 
@@ -26,7 +26,7 @@ export default function Experience() {
           <span className="absolute left-0 top-0 hidden h-full w-px bg-line md:block" aria-hidden="true" />
           <motion.span
             style={{ scaleY: progress }}
-            className="absolute left-0 top-0 hidden h-full w-px origin-top bg-mint md:block"
+            className="absolute left-0 top-0 hidden h-full w-px origin-top bg-accent md:block"
             aria-hidden="true"
           />
           {experience.map((r, i) => {
@@ -35,7 +35,7 @@ export default function Experience() {
               <li key={r.org} className="relative border-b border-line md:pl-10">
                 <span
                   className={`absolute -left-[4px] top-9 hidden size-[9px] rounded-full border transition-colors duration-500 md:block ${
-                    isOpen ? 'border-mint bg-mint' : 'border-line-strong bg-bg'
+                    isOpen ? 'border-accent bg-accent' : 'border-line-strong bg-bg'
                   }`}
                   aria-hidden="true"
                 />
@@ -49,13 +49,13 @@ export default function Experience() {
                   >
                     <span className="font-mono text-[12px] uppercase tracking-[0.12em] text-dim md:col-span-3 md:pt-2">{r.period}</span>
                     <span className="col-span-1 row-start-2 md:col-span-8 md:row-start-auto">
-                      <span className="block font-display text-[1.6rem] font-semibold leading-tight tracking-[-0.025em] transition-colors group-hover:text-mint sm:text-[2.1rem]">
+                      <span className="block font-display text-[1.6rem] font-semibold leading-tight tracking-[-0.025em] transition-colors group-hover:text-accent sm:text-[2.1rem]">
                         {r.org}
                       </span>
                       <span className="mt-1 block text-[15px] text-muted">{r.title}</span>
                     </span>
                     <span className="neu col-start-2 row-span-2 row-start-1 inline-flex size-11 items-center justify-center self-center rounded-full md:col-span-1 md:col-start-12 md:row-span-1 md:justify-self-end">
-                      <Plus className={`size-4 transition-transform duration-500 ${isOpen ? 'rotate-45 text-mint' : ''}`} aria-hidden="true" />
+                      <Plus className={`size-4 transition-transform duration-500 ${isOpen ? 'rotate-45 text-accent' : ''}`} aria-hidden="true" />
                     </span>
                   </button>
                 </h3>
@@ -74,13 +74,13 @@ export default function Experience() {
                         <ul className="space-y-2.5 md:col-span-5">
                           {r.points.map((pt) => (
                             <li key={pt} className="flex gap-3 text-[15px] text-muted">
-                              <span className="mt-[0.7em] h-px w-3 shrink-0 bg-sage" aria-hidden="true" />
+                              <span className="mt-[0.7em] h-px w-3 shrink-0 bg-accent-2" aria-hidden="true" />
                               {pt}
                             </li>
                           ))}
                           {r.link && (
                             <li>
-                              <a href={r.link} target="_blank" rel="noreferrer" className="link-draw mt-2 inline-flex items-center gap-1.5 text-[14px] text-sage">
+                              <a href={r.link} target="_blank" rel="noreferrer" className="link-draw mt-2 inline-flex items-center gap-1.5 text-[14px] text-accent-2">
                                 {r.link.replace('https://', '')} <ArrowUpRight className="size-3.5" aria-hidden="true" />
                               </a>
                             </li>

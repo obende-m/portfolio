@@ -75,15 +75,15 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
       <svg viewBox="0 0 100 100" className="absolute inset-0 size-full overflow-visible">
         <defs>
           <radialGradient id="coreGlow" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#b8f0cc" stopOpacity="0.28" />
-            <stop offset="100%" stopColor="#b8f0cc" stopOpacity="0" />
+            <stop offset="0%" stopColor="#2563eb" stopOpacity="0.28" />
+            <stop offset="100%" stopColor="#2563eb" stopOpacity="0" />
           </radialGradient>
         </defs>
         <circle cx="50" cy="50" r="30" fill="url(#coreGlow)" />
         {[17, 29, 41].map((r) => (
-          <circle key={r} cx="50" cy="50" r={r} fill="none" stroke="#f1f3ee" strokeOpacity="0.07" strokeWidth="0.25" />
+          <circle key={r} cx="50" cy="50" r={r} fill="none" stroke="#0b1b3a" strokeOpacity="0.07" strokeWidth="0.25" />
         ))}
-        <circle cx="50" cy="50" r="41" fill="none" stroke="#b8f0cc" strokeOpacity="0.35" strokeWidth="0.3" strokeDasharray="0.6 3.5" />
+        <circle cx="50" cy="50" r="41" fill="none" stroke="#2563eb" strokeOpacity="0.35" strokeWidth="0.3" strokeDasharray="0.6 3.5" />
         {[
           'M50 50 Q 30 40 22 22',
           'M50 50 Q 70 42 82 32',
@@ -92,12 +92,12 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
           'M50 50 Q 58 30 60 8',
         ].map((d, i) => (
           <g key={d}>
-            <path d={d} fill="none" stroke="#f1f3ee" strokeOpacity="0.08" strokeWidth="0.3" />
-            <path d={d} fill="none" stroke="#b8f0cc" strokeOpacity="0.7" strokeWidth="0.45" className="flow" style={{ animationDelay: `${i * -1.2}s` }} vectorEffect="non-scaling-stroke" />
+            <path d={d} fill="none" stroke="#0b1b3a" strokeOpacity="0.08" strokeWidth="0.3" />
+            <path d={d} fill="none" stroke="#2563eb" strokeOpacity="0.7" strokeWidth="0.45" className="flow" style={{ animationDelay: `${i * -1.2}s` }} vectorEffect="non-scaling-stroke" />
           </g>
         ))}
         {[ [22, 22], [82, 32], [20, 76], [78, 80], [60, 8] ].map(([x, y]) => (
-          <circle key={`${x}-${y}`} cx={x} cy={y} r="0.9" fill="#b8f0cc" className="breathe" />
+          <circle key={`${x}-${y}`} cx={x} cy={y} r="0.9" fill="#2563eb" className="breathe" />
         ))}
       </svg>
 
@@ -109,7 +109,7 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
         transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
       >
         <div className="neu-inset flex size-[104px] flex-col items-center justify-center rounded-full sm:size-[132px]">
-          <span className="accent-serif text-[38px] leading-none text-mint sm:text-[46px]">om</span>
+          <span className="accent-serif text-[38px] leading-none text-accent sm:text-[46px]">om</span>
           <span className="mt-1 font-mono text-[9px] uppercase tracking-[0.2em] text-dim">systems</span>
         </div>
       </motion.div>
@@ -118,7 +118,7 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
       <Chip px={sx} py={sy} depth={-14} className="left-[0%] top-[6%] w-[200px] sm:w-[232px]" delay={0}>
         <div className="p-3.5 sm:p-4">
           <div className="mb-3 flex items-center justify-between">
-            <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-sage">
+            <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-2">
               <Link2 className="size-3.5" /> Single-use link
             </span>
             <span className="font-mono text-[10px] text-dim">IDA</span>
@@ -130,7 +130,7 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
                 <li key={s} className="flex items-center gap-2.5 text-[12.5px] sm:text-[13px]">
                   <span
                     className={`flex size-[18px] items-center justify-center rounded-full border transition-all duration-500 ${
-                      done ? 'border-mint bg-mint text-bg' : 'border-white/20 text-transparent'
+                      done ? 'border-accent bg-accent text-bg' : 'border-ink/20 text-transparent'
                     }`}
                   >
                     <Check className="size-3" strokeWidth={3} />
@@ -146,7 +146,7 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
       {/* Queue — QMan */}
       <Chip px={sx} py={sy} depth={18} className="right-[0%] top-[20%] w-[172px] sm:w-[200px]" delay={0.15} float={8}>
         <div className="p-3.5 sm:p-4">
-          <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-[#9cc0ff]">
+          <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent">
             <Megaphone className="size-3.5" /> Now serving
           </span>
           <div className="relative mt-2 h-[38px] overflow-hidden">
@@ -167,7 +167,7 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
       {/* Audit trail */}
       <Chip px={sx} py={sy} depth={10} className="bottom-[4%] left-[2%] w-[210px] sm:w-[244px]" delay={0.3} float={5}>
         <div className="p-3.5 sm:p-4">
-          <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-sage">
+          <span className="flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.14em] text-accent-2">
             <ShieldCheck className="size-3.5" /> Audit trail
           </span>
           <ul className="mt-2.5 space-y-1.5 font-mono text-[11px]">
@@ -182,7 +182,7 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
                   transition={{ duration: 0.5 }}
                   className="flex justify-between gap-3"
                 >
-                  <span className={o === 2 ? 'text-mint' : 'text-muted'}>{ev}</span>
+                  <span className={o === 2 ? 'text-accent' : 'text-muted'}>{ev}</span>
                   <span className="text-dim">{who}</span>
                 </motion.li>
               );
@@ -194,9 +194,9 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
       {/* Health check */}
       <Chip px={sx} py={sy} depth={-20} className="bottom-[12%] right-[0%] hidden sm:block" delay={0.45} float={7}>
         <div className="flex items-center gap-3 px-4 py-3">
-          <Activity className="size-4 text-mint" />
+          <Activity className="size-4 text-accent" />
           <span className="font-mono text-[11.5px] text-muted">/api/health/ready</span>
-          <span className="rounded-md bg-mint/15 px-1.5 py-0.5 font-mono text-[11px] text-mint">200</span>
+          <span className="rounded-md bg-accent/15 px-1.5 py-0.5 font-mono text-[11px] text-accent">200</span>
         </div>
       </Chip>
 
@@ -204,8 +204,8 @@ export default function SystemMap({ px, py }: { px: MotionValue<number>; py: Mot
       <Chip px={sx} py={sy} depth={24} className="right-[22%] top-[0%] hidden sm:block" delay={0.6} float={4}>
         <div className="flex items-center gap-2.5 px-3.5 py-2.5">
           <span className="relative flex size-2">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-mint opacity-60" />
-            <span className="relative inline-flex size-2 rounded-full bg-mint" />
+            <span className="absolute inline-flex size-full animate-ping rounded-full bg-accent opacity-60" />
+            <span className="relative inline-flex size-2 rounded-full bg-accent" />
           </span>
           <span className="font-mono text-[11px] text-muted">420 tests passing</span>
         </div>

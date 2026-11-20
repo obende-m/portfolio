@@ -1,4 +1,4 @@
-import { Award, BadgeCheck, GraduationCap, MapPin, BookOpen } from 'lucide-react';
+import { ArrowUpRight, Award, BadgeCheck, GraduationCap, MapPin, BookOpen } from 'lucide-react';
 import { credentials, experience } from '../data/profile';
 import { site } from '../data/site';
 import { Reveal, SectionHead } from './Reveal';
@@ -13,7 +13,7 @@ export default function About() {
           index="02"
           label="About"
           id="about-title"
-          title={<>Building it, and <span className="accent-serif text-mint">supporting</span> the people who use it.</>}
+          title={<>Building it, and <span className="accent-serif text-accent">supporting</span> the people who use it.</>}
         />
 
         <div className="mt-16 grid gap-4 lg:grid-cols-12 lg:gap-5">
@@ -38,9 +38,9 @@ export default function About() {
           {/* ID card — swap for a photo by adding one to /public and an <img> here */}
           <Reveal delay={0.05} className="lg:col-span-5">
             <div onPointerMove={spotlight} className="glass spotlight relative overflow-hidden rounded-[28px] p-6 sm:p-8">
-              <div className="absolute -right-16 -top-16 size-56 rounded-full bg-forest/70 blur-3xl" aria-hidden="true" />
+              <div className="absolute -right-16 -top-16 size-56 rounded-full bg-tint/70 blur-3xl" aria-hidden="true" />
               <div className="relative flex items-start justify-between">
-                <span className="accent-serif neu-inset flex size-20 items-center justify-center rounded-2xl text-[42px] text-mint">om</span>
+                <span className="accent-serif neu-inset flex size-20 items-center justify-center rounded-2xl text-[42px] text-accent">om</span>
                 <span className="font-mono text-[10.5px] uppercase tracking-[0.16em] text-dim">Profile</span>
               </div>
               <p className="relative mt-8 font-display text-[1.65rem] font-semibold leading-tight tracking-tight">{site.name}</p>
@@ -65,18 +65,29 @@ export default function About() {
           {/* Credentials */}
           <Reveal delay={0.1} className="card grid gap-6 p-6 sm:p-8 lg:col-span-5">
             <div className="flex items-start gap-4">
-              <span className="neu flex size-11 shrink-0 items-center justify-center rounded-xl"><BadgeCheck className="size-5 text-mint" aria-hidden="true" /></span>
+              <span className="neu flex size-11 shrink-0 items-center justify-center rounded-xl"><BadgeCheck className="size-5 text-accent" aria-hidden="true" /></span>
               <div>
                 <p className="font-medium">{credentials.certification.title}</p>
                 <p className="text-[14px] text-muted">{credentials.certification.org}</p>
               </div>
             </div>
             <div className="flex items-start gap-4">
-              <span className="neu flex size-11 shrink-0 items-center justify-center rounded-xl"><Award className="size-5 text-mint" aria-hidden="true" /></span>
+              <span className="neu flex size-11 shrink-0 items-center justify-center rounded-xl"><Award className="size-5 text-accent" aria-hidden="true" /></span>
               <ul className="space-y-1">
                 {credentials.awards.map((a) => (
                   <li key={a} className="text-[14px] text-muted first:font-medium first:text-ink">{a}</li>
                 ))}
+                <li>
+                  <a
+                    href={credentials.awardLetter}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-1 inline-flex min-h-11 items-center gap-1.5 text-[14px] font-medium text-accent"
+                  >
+                    <span className="link-draw">View the letter (PDF)</span>
+                    <ArrowUpRight className="size-4" aria-hidden="true" />
+                  </a>
+                </li>
               </ul>
             </div>
           </Reveal>
@@ -85,7 +96,7 @@ export default function About() {
           <Reveal delay={0.05} className="card p-6 sm:p-8 lg:col-span-12">
             <div className="grid gap-6 lg:grid-cols-12 lg:items-center">
               <div className="flex items-start gap-4 lg:col-span-4">
-                <span className="neu flex size-11 shrink-0 items-center justify-center rounded-xl"><BookOpen className="size-5 text-mint" aria-hidden="true" /></span>
+                <span className="neu flex size-11 shrink-0 items-center justify-center rounded-xl"><BookOpen className="size-5 text-accent" aria-hidden="true" /></span>
                 <div>
                   <p className="font-medium">Training</p>
                   <p className="text-[14px] text-muted">{credentials.training.org}</p>

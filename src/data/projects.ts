@@ -12,9 +12,7 @@ export type Project = {
   collaborative?: boolean;
   status: string;
   stack: string[];
-  stackSource: string;
   live?: string;
-  repo?: string;
   accent: string;
   cover: Shot;
   mobile?: Shot;
@@ -44,10 +42,8 @@ export const projects: Project[] = [
     role: 'Designed and built the client, the API and the database schema.',
     status: 'Live',
     stack: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'TanStack Query', 'React Hook Form', 'Zod', 'Node.js', 'Express', 'Prisma', 'PostgreSQL', 'Supabase', 'JWT', 'Argon2', 'Twilio', 'PDFKit', 'ExcelJS'],
-    stackSource: 'Verified from the client and server package.json files and source in the IDA_ELECTIONS repository.',
     live: 'https://ida-elections.vercel.app',
-    repo: 'https://github.com/obende-m/IDA_ELECTIONS',
-    accent: '#7fd1a8',
+    accent: '#1d4ed8',
     cover: img('ida-admin-dashboard', 'IDA admin overview: registered voters, ballots cast, turnout, time remaining and voting-link accounting'),
     mobile: phone('ida-mobile', 'IDA Election Portal voter page on a phone'),
     gallery: [
@@ -100,9 +96,7 @@ export const projects: Project[] = [
     role: 'Designed and built the domain engine, the three web apps and the API.',
     status: 'Version 1 built and tested · being prepared for clinical use',
     stack: ['TypeScript', 'React', 'Vite', 'Tailwind CSS', 'Fastify', 'PostgreSQL', 'Vitest', 'Testing Library'],
-    stackSource: 'Verified from the workspace package.json files in the QMan repository (apps/web, apps/api, packages/domain, packages/persistence).',
-    repo: 'https://github.com/obende-m/QMan',
-    accent: '#8fb6ff',
+    accent: '#2563eb',
     cover: img('qman-reception', 'QMan reception dashboard showing visits today, live queue status per station and priority patients'),
     gallery: [
       img('qman-clinical', 'QMan clinical workspace for the consultation station with call, recall, skip and escalate actions'),
@@ -129,7 +123,7 @@ export const projects: Project[] = [
       { title: 'Three applications, one engine', body: 'Staff, display and tracker ship as separate builds, so the public screens carry none of the staff code that can change clinical state. The display board bundle is about 7 kB.' },
       { title: 'Events are the integration seam', body: 'One clinical action emits an event; announcements, notifications, the audit log and every open screen subscribe to it. The queue engine knows about none of them.' },
       { title: 'Two identities, on purpose', body: 'A journey code follows the whole visit; a queue number belongs to one station stop. Position in the queue is always derived, never stored.' },
-      { title: 'Decisions written down', body: '57 architecture decision records in the repository, and 420 automated tests across the domain, persistence and the three apps.' },
+      { title: 'Decisions written down', body: '57 written architecture decision records, and 420 automated tests across the domain, persistence and the three apps.' },
     ],
     architecture: [
       { layer: 'Apps', items: ['Staff app (~130 kB)', 'Display board (~7 kB)', 'Patient tracker (~10 kB)'] },
@@ -151,9 +145,8 @@ export const projects: Project[] = [
     collaborative: true,
     status: 'Live',
     stack: ['React', 'Vite', 'React Router', 'Radix UI', 'Tailwind CSS', 'Supabase', 'Zod'],
-    stackSource: 'Observed in the live site’s production bundles. The repository is private, so backend details are not listed.',
     live: 'https://bookdexhub.com',
-    accent: '#e8b98a',
+    accent: '#0369a1',
     cover: img('bookdex-dashboard', 'BookDex dashboard with revenue, bookings, clients and a calendar, beside the public booking page on a phone', 1120, 720),
     mobile: phone('bookdex-mobile', 'BookDex home page on a phone'),
     gallery: [
@@ -184,9 +177,8 @@ export const projects: Project[] = [
     role: 'Developed the website and platform, including administrative features and the admissions, application and payment workflows.',
     status: 'Live',
     stack: ['React', 'Tailwind CSS', 'Supabase', 'Vercel'],
-    stackSource: 'Observed in the live site’s production bundles and response headers.',
     live: 'https://www.bomasacademy.org',
-    accent: '#f2c14e',
+    accent: '#1e40af',
     cover: img('bomas-home', 'Bomas Academy home page with students and the heading “Where character meets excellence.”'),
     mobile: phone('bomas-mobile', 'Bomas Academy home page on a phone'),
     gallery: [
@@ -214,9 +206,8 @@ export const projects: Project[] = [
     role: 'Developed the website in PHP, including the administrative side and e-commerce features: product listings and a cart.',
     status: 'Live',
     stack: ['PHP'],
-    stackSource: 'Confirmed from the live site (PHP pages and session cookie).',
     live: 'https://merakicode.ng',
-    accent: '#c9a54a',
+    accent: '#3b5bdb',
     cover: img('meraki-home', 'Meraki Code home page: “Crafting Inspiring spaces.”'),
     mobile: phone('meraki-mobile', 'Meraki Code home page on a phone'),
     gallery: [],
@@ -240,9 +231,8 @@ export const projects: Project[] = [
     role: 'Developed the website in PHP.',
     status: 'Live',
     stack: ['PHP', 'Bootstrap'],
-    stackSource: 'Confirmed from the live site’s response headers and markup.',
     live: 'https://www.teekaysicklecellfoundation.com',
-    accent: '#e05656',
+    accent: '#1d4ed8',
     cover: img('teekay-home', 'Teekay Sickle Cell Foundation home page: “Touching lives, one at a time.”'),
     mobile: phone('teekay-mobile', 'Teekay Sickle Cell Foundation home page on a phone'),
     gallery: [],
@@ -262,7 +252,6 @@ export type MiniProject = {
   what: string;
   stack: string[];
   live: string;
-  repo?: string;
   cover: Shot;
   mobile: Shot;
 };
@@ -273,7 +262,6 @@ export const moreWork: MiniProject[] = [
     what: 'Public site and content management for a ministry serving widows in Jos.',
     stack: ['TanStack Start', 'React', 'Tailwind CSS', 'shadcn/ui', 'Supabase'],
     live: 'https://yokm.vercel.app',
-    repo: 'https://github.com/obende-m/YOKM',
     cover: img('yokm-home', 'YOKM home page: “Awake, Oh Ye Widows”'),
     mobile: phone('yokm-mobile', 'YOKM home page on a phone'),
   },
@@ -282,7 +270,6 @@ export const moreWork: MiniProject[] = [
     what: 'Site for a Lagos guard company, with server-validated forms, CV uploads and a staff admin.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Supabase', 'Motion'],
     live: 'https://safetysignaturesltd.vercel.app',
-    repo: 'https://github.com/obende-m/safetysignaturesltd',
     cover: img('safety-home', 'Safety Signatures home page: “Security guards and protection for organisations in Lagos”'),
     mobile: phone('safety-mobile', 'Safety Signatures home page on a phone'),
   },
@@ -291,7 +278,6 @@ export const moreWork: MiniProject[] = [
     what: 'Multi-page static site for a day and boarding school in Oworonshoki, Lagos.',
     stack: ['Astro', 'GSAP'],
     live: 'https://gulfflowerschool.vercel.app',
-    repo: 'https://github.com/obende-m/GulfFlowerSchool',
     cover: img('gulf-home', 'Gulf Flower Schools home page: “Where young minds bloom, from cradle to SS3.”'),
     mobile: phone('gulf-mobile', 'Gulf Flower Schools home page on a phone'),
   },
@@ -300,7 +286,6 @@ export const moreWork: MiniProject[] = [
     what: 'Site for an architecture, construction and real estate consultancy.',
     stack: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
     live: 'https://rivendell-sandy.vercel.app',
-    repo: 'https://github.com/obende-m/Rivendell',
     cover: img('rivendell-home', 'Rivendell Consults home page: “Building Legacies Through Design”'),
     mobile: phone('rivendell-mobile', 'Rivendell Consults home page on a phone'),
   },

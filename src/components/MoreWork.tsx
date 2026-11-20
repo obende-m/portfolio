@@ -1,5 +1,4 @@
 import { ArrowUpRight } from 'lucide-react';
-import { GithubIcon } from './BrandIcons';
 import { moreWork } from '../data/projects';
 import { PhoneFrame, ShotImg } from './Frames';
 import { Reveal, SectionHead } from './Reveal';
@@ -13,8 +12,8 @@ export default function MoreWork() {
           index="05"
           label="More websites"
           id="more-title"
-          title={<>More <span className="accent-serif text-mint">websites.</span></>}
-          lede="For a ministry in Jos, a guard company and a school in Lagos, and a consultancy. All live, all with public source code."
+          title={<>More <span className="accent-serif text-accent">websites.</span></>}
+          lede="For a ministry in Jos, a guard company and a school in Lagos, and a consultancy. All live and in use."
         />
 
         <div className="mt-16 grid gap-4 md:grid-cols-2 lg:gap-5">
@@ -42,11 +41,6 @@ export default function MoreWork() {
                     <a href={m.live} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-1.5 text-[14px] font-medium text-ink">
                       <span className="link-draw">Visit site</span> <ArrowUpRight className="size-4" aria-hidden="true" />
                     </a>
-                    {m.repo && (
-                      <a href={m.repo} target="_blank" rel="noreferrer" className="inline-flex min-h-11 items-center gap-1.5 text-[14px] text-muted hover:text-ink">
-                        <GithubIcon /> <span className="link-draw">Source</span>
-                      </a>
-                    )}
                   </div>
                 </div>
               </article>

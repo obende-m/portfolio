@@ -5,7 +5,6 @@ import { getProject, projects } from '../data/projects';
 import { BrowserFrame, PhoneFrame, ShotImg } from '../components/Frames';
 import { MaskReveal, Reveal } from '../components/Reveal';
 import { StackChips } from '../components/Work';
-import { GithubIcon } from '../components/BrandIcons';
 import { useMeta } from '../lib/useMeta';
 import { spotlight } from '../lib/useSpotlight';
 import NotFound from './NotFound';
@@ -16,7 +15,7 @@ function Label({ n, children }: { n: string; children: string }) {
   return (
     <p className="eyebrow mb-6 flex items-center gap-3">
       <span className="text-dim">{n}</span>
-      <span className="h-px w-8 bg-sage/40" aria-hidden="true" />
+      <span className="h-px w-8 bg-accent-2/40" aria-hidden="true" />
       {children}
     </p>
   );
@@ -88,8 +87,8 @@ export default function CaseStudy() {
                   </div>
                 </div>
                 {p.collaborative && (
-                  <div className="flex items-start gap-2.5 rounded-xl border border-white/10 bg-white/[0.03] p-3 text-muted">
-                    <Users className="mt-0.5 size-4 shrink-0 text-sage" aria-hidden="true" />
+                  <div className="flex items-start gap-2.5 rounded-xl border border-ink/10 bg-ink/[0.03] p-3 text-muted">
+                    <Users className="mt-0.5 size-4 shrink-0 text-accent-2" aria-hidden="true" />
                     Built by a team. Only my part of the work is claimed here.
                   </div>
                 )}
@@ -97,11 +96,6 @@ export default function CaseStudy() {
                   {p.live && (
                     <a href={p.live} target="_blank" rel="noreferrer" className="btn btn-primary !min-h-11 !px-5 !text-[14px]">
                       Visit {host} <ArrowUpRight className="arrow arrow-up size-4" aria-hidden="true" />
-                    </a>
-                  )}
-                  {p.repo && (
-                    <a href={p.repo} target="_blank" rel="noreferrer" className="btn neu !min-h-11 !px-5 !text-[14px] text-ink">
-                      <GithubIcon /> Source
                     </a>
                   )}
                 </div>
@@ -136,11 +130,11 @@ export default function CaseStudy() {
           </Reveal>
           <div className="grid gap-10 sm:grid-cols-2 lg:col-span-6 lg:col-start-7 lg:pt-14">
             <Reveal delay={0.05}>
-              <h3 className="font-mono text-[12px] uppercase tracking-[0.14em] text-sage">The goal</h3>
+              <h3 className="font-mono text-[12px] uppercase tracking-[0.14em] text-accent-2">The goal</h3>
               <p className="mt-4 text-[16px] leading-[1.75] text-muted">{p.objective}</p>
             </Reveal>
             <Reveal delay={0.12}>
-              <h3 className="font-mono text-[12px] uppercase tracking-[0.14em] text-sage">The build</h3>
+              <h3 className="font-mono text-[12px] uppercase tracking-[0.14em] text-accent-2">The build</h3>
               <p className="mt-4 text-[16px] leading-[1.75] text-muted">{p.solution}</p>
             </Reveal>
           </div>
@@ -183,7 +177,7 @@ export default function CaseStudy() {
                 return (
                   <Reveal key={g.src} className={wide && !square ? 'lg:col-span-12' : 'lg:col-span-6'}>
                     {square ? (
-                      <div className="shot overflow-hidden rounded-[22px] border border-white/10">
+                      <div className="shot overflow-hidden rounded-[22px] border border-ink/10">
                         <ShotImg shot={g} className="w-full" sizes="(min-width:1024px) 40vw, 100vw" />
                       </div>
                     ) : (
@@ -250,7 +244,7 @@ export default function CaseStudy() {
             <Reveal className="lg:col-span-4">
               <Label n={num()}>Under the hood</Label>
               <h2 id="decisions" className="h2">Technical decisions</h2>
-              <p className="lede mt-6">Taken from the code, tests and decision records in the repository.</p>
+              <p className="lede mt-6">The choices that shaped how it was built.</p>
             </Reveal>
             <ol className="lg:col-span-7 lg:col-start-6">
               {p.decisions.map((d, i) => (
@@ -276,12 +270,11 @@ export default function CaseStudy() {
             <Label n={num()}>Built with</Label>
             <h2 id="built-with" className="sr-only">Built with</h2>
             <StackChips items={p.stack} />
-            <p className="mt-6 max-w-xl text-[14px] text-dim">{p.stackSource}</p>
           </Reveal>
           {p.note && (
             <Reveal delay={0.08} className="lg:col-span-4 lg:col-start-9">
               <div className="neu-inset flex gap-3 rounded-[20px] p-5 text-[14.5px] leading-relaxed text-muted">
-                <Info className="mt-0.5 size-4 shrink-0 text-sage" aria-hidden="true" />
+                <Info className="mt-0.5 size-4 shrink-0 text-accent-2" aria-hidden="true" />
                 {p.note}
               </div>
             </Reveal>
@@ -299,7 +292,7 @@ export default function CaseStudy() {
         <div className="wrap flex items-end justify-between gap-6 py-16 sm:py-24">
           <div>
             <p className="eyebrow mb-4">Next case study</p>
-            <p className="display text-[clamp(2.2rem,6vw,5.5rem)] transition-colors duration-500 group-hover:text-mint">{next.name}</p>
+            <p className="display text-[clamp(2.2rem,6vw,5.5rem)] transition-colors duration-500 group-hover:text-accent">{next.name}</p>
           </div>
           <span className="neu mb-2 inline-flex size-14 shrink-0 items-center justify-center rounded-full transition-transform duration-500 group-hover:translate-x-1 sm:size-16">
             <ArrowRight className="size-5" aria-hidden="true" />

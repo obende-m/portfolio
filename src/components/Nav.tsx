@@ -23,7 +23,7 @@ function useActiveSection(enabled: boolean) {
 
 export function Monogram({ className = '' }: { className?: string }) {
   return (
-    <span className={`accent-serif inline-flex size-10 items-center justify-center rounded-full neu text-[22px] leading-none text-mint ${className}`}>
+    <span className={`accent-serif inline-flex size-10 items-center justify-center rounded-full neu text-[22px] leading-none text-accent ${className}`}>
       om
     </span>
   );
@@ -62,7 +62,7 @@ export default function Nav() {
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1], delay: 0.2 }}
           className={`flex items-center justify-between gap-4 rounded-full py-2 pl-2 pr-2 transition-all duration-500 ${
-            scrolled || !onHome ? 'glass bg-[#0d110e]/80' : 'border border-transparent'
+            scrolled || !onHome ? 'glass bg-white/80' : 'border border-transparent'
           }`}
         >
           <Link to="/" className="flex items-center gap-3 rounded-full pr-3" aria-label="Obende Michael — home">
@@ -85,7 +85,7 @@ export default function Nav() {
                     {isActive && (
                       <motion.span
                         layoutId="nav-pill"
-                        className="absolute inset-0 -z-10 rounded-full bg-white/[0.07] ring-1 ring-white/10"
+                        className="absolute inset-0 -z-10 rounded-full bg-ink/[0.07] ring-1 ring-ink/10"
                         transition={{ type: 'spring', stiffness: 380, damping: 32 }}
                       />
                     )}

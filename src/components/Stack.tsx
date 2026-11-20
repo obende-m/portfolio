@@ -12,7 +12,7 @@ export default function Stack() {
           index="04"
           label="Stack"
           id="stack-title"
-          title={<>Tools, and where I’ve <span className="accent-serif text-mint">used</span> them.</>}
+          title={<>Tools, and where I’ve <span className="accent-serif text-accent">used</span> them.</>}
           lede="Next to each tool is the project where it shows up in the code or on the live site. Tools without a project are ones I’ve used outside this portfolio."
         />
 
@@ -41,9 +41,9 @@ export default function Stack() {
                     <ul className={`mt-7 divide-y divide-line border-t border-line ${big ? 'sm:mt-10' : ''}`}>
                       {g.items.map((it) => (
                         <li key={it.name} className="group/row flex items-baseline justify-between gap-4 py-3 transition-colors">
-                          <span className={`transition-colors group-hover/row:text-mint ${big ? 'text-[17px] sm:text-[19px]' : 'text-[15px]'}`}>{it.name}</span>
+                          <span className={`transition-colors group-hover/row:text-accent ${big ? 'text-[17px] sm:text-[19px]' : 'text-[15px]'}`}>{it.name}</span>
                           {it.where && (
-                            <span className="text-right font-mono text-[11px] leading-snug text-dim transition-colors group-hover/row:text-sage">{it.where}</span>
+                            <span className="text-right font-mono text-[11px] leading-snug text-dim transition-colors group-hover/row:text-accent-2">{it.where}</span>
                           )}
                         </li>
                       ))}
